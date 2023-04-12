@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        @vite('resources/css/app.css')
         <link rel="stylesheet" href="{{ Vite::asset('resources/css/home.css') }}">
         <title>вишьлист</title>
     </head>
@@ -17,11 +18,13 @@
         <nav class="navbar">
             <div class="navbar-container">
                 <div class="navbar-logo">
-                    <a href="#"><img src="logo.png" alt="Лого"></a>
+                    <a href="#"><img
+                            src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/256/external-donut-restaurant-dreamstale-lineal-dreamstale.png"
+                            alt="Лого"></a>
                 </div>
                 <div class="navbar-links">
                     <ul>
-                        <li><a href="#">Добавить подарок</a></li>
+                        <li><a href="{{ route('create') }}">Добавить подарок</a></li>
                         <li><a href="#">Профиль</a></li>
                     </ul>
                 </div>

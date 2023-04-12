@@ -33,4 +33,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // !если пользователь не авторезирован то он ен може поппасть
 Route::middleware('auth')->group(function () {
     Route::get('/sheets', [Addcontroller::class, 'index'])->name('sheets');
+    Route::post('/sheetss', [Addcontroller::class, 'create'])->name('creates');
+    Route::view('/create', 'sheets')->name('create');
 });
