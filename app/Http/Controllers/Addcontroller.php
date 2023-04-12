@@ -35,14 +35,22 @@ class Addcontroller extends Controller
 
         // Сохранение данных о товаре в базе данных
         $product = new Product();
-        $product->product_name = $request->input('name');
-        $product->description = $request->input('opis');
+        $product->name = $request->input('name');
+        $product->opis = $request->input('opis');
         $product->price = $request->input('price');
-        $product->image = $imageName;
+        $product->link = $request->input('link');
+        $product->img = $imageName;
         $product->save();
 
         dd($product);
 
-        // return redirect('/');
+        return redirect('/show');
     }
+
+    public function show()
+    { 
+        $card=Product::all();
+        return view('show',compact('card'));
+    }
+
 }

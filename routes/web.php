@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/reg', [RegisteredUserController::class, 'create']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,8 +27,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+// !Регистрация
+Route::get('/reg', [RegisteredUserController::class, 'create']);
 // !главная страница 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::view('/', 'ohas')->name('home');
+// !вывод товаров
+Route::get('/show', [Addcontroller::class, 'show'])->name('show');
 // !если пользователь не авторезирован то он ен може поппасть
 Route::middleware('auth')->group(function () {
     Route::get('/sheets', [Addcontroller::class, 'index'])->name('sheets');

@@ -18,7 +18,7 @@
         <nav class="navbar">
             <div class="navbar-container">
                 <div class="navbar-logo">
-                    <a href="#"><img
+                    <a href="{{ route('home') }}"><img
                             src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/256/external-donut-restaurant-dreamstale-lineal-dreamstale.png"
                             alt="Лого"></a>
                 </div>
